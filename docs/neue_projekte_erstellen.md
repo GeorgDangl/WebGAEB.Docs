@@ -13,7 +13,7 @@ Um ein Element anzulegen, müssen Sie in Spalte `A - Typ` einen der folgenden We
 
 ### Gruppierungen Erstellen
 
-Möchten Sie Ihr Projekt in Gruppen unterteilen bzw. eine Gliederung erstellen, können Sie mit dem Element `Gruppe` arbeiten. Sobald das Element `Gruppe` beim Import erkannt wird, werden alle nachfolgenden Element, die mit der gleichen Ordnungszahl wie die Gruppe beginnen, darunter eingeordnet.
+Möchten Sie Ihr Projekt in Gruppen unterteilen bzw. eine Gliederung erstellen, können Sie mit dem Element `Gruppe` arbeiten. Sobald das Element `Gruppe` beim Import erkannt wird, werden alle nachfolgenden Elemente, die mit der gleichen Ordnungszahl wie die Gruppe beginnen, darunter eingeordnet.
 
 Folgende Beispieleingabe in Excel:
 

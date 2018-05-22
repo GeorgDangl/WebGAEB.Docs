@@ -2,7 +2,7 @@
 
 Auf diesen Seiten erfahren Sie, wie man mit [Web**GAEB**](https://www.web-gaeb.de/) arbeitet - dem kostenlosen GAEB Konverter von Dangl**IT**.
 
-Web**GAEB** nutzt intern die [GAEB & AVA .Net Library](https://www.dangl-it.de/produkte/gaeb-ava-net-library/) von Dangl**IT**. [Kontaktieren Sie uns](https://www.dangl-it.de/kontakt/?message=Ich+habe+Interesse+an+Dangl.AVA+%26+Dangl.GAEB.+Bitte+kontaktieren+Sie+mich.), falls Sie mehr wissen möchten oder auf der Suche nach einer Cross-Plattform Library für GAEB & AVA sind.
+Web**GAEB** nutzt intern die [GAEB & AVA .Net Library](https://www.dangl-it.de/produkte/gaeb-ava-net-library/) von Dangl**IT**. [Kontaktieren Sie uns](https://www.dangl-it.de/kontakt/?message=Ich+habe+Interesse+an+Dangl.AVA+%26+Dangl.GAEB.+Bitte+kontaktieren+Sie+mich.), falls Sie mehr wissen möchten oder Sie auf der Suche nach einer Cross-Plattform Library für GAEB & AVA sind.
 
 ## Funktionen
 
@@ -10,7 +10,7 @@ Web**GAEB** nutzt intern die [GAEB & AVA .Net Library](https://www.dangl-it.de/p
 
 Sie haben eine beschädigte GAEB Datei, bei der Ihr AVA Programm versagt, oder Sie arbeiten nicht mit der neuesten Version und können die Dateien zur Ausscheibung nicht öffnen?
 
-Laden Sie Ihre Datei zu Web**GAEB** hoch und transformieren Sie sie in das gewünschte Zielformat. Zum reparieren können Sie einfach das Ausgangsformat wählen.
+Laden Sie Ihre Datei zu Web**GAEB** hoch und transformieren Sie sie in das gewünschte Zielformat. Zum Reparieren können Sie einfach das gleiche Zielformat wie die Eingabedatei wählen.
 
 ### GAEB zu Excel
 
