@@ -48,6 +48,7 @@ class Build : NukeBuild
         .Requires(() => DocuApiEndpoint)
         .Executes(() =>
         {
+            Logger.Info("Docs version: " + GitVersion.NuGetVersion);
             WebDocu(s => s
                 .SetDocuApiEndpoint(DocuApiEndpoint)
                 .SetDocuApiKey(DocuApiKey)
