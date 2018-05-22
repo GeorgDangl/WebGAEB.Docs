@@ -1,0 +1,39 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "output/**/*",
+          "docs/**/*",
+          "GitVersion.yml",
+          "src/Dangl.Identity.UI/**/*"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**.png"
+        ]
+      }
+    ],
+    "overwrite": "specs/*.md",
+    "globalMetadata": {
+      "_appTitle": "WebGAEB Dokumentation",
+      "_appFooter": "&copy; <a href=\"https://www.dangl-it.com\" target=\"_blank\">Dangl IT - Georg Dangl</a>",
+      "_appLogoPath": "app-logo.png",
+      "_appFaviconPath": "app-logo.png",
+      "_enableSearch": true,
+      "_gitUrlPattern": "github"
+    },
+    "dest": "../output",
+    "template": [
+      "default",
+      "template"
+    ]
+  }
+}
