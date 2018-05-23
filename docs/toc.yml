@@ -1,5 +1,8 @@
 - name: Home
   href: index.md
+- name: Neue Projekte Erstellen
+  href: neue_projekte/
+  homepage: neue_projekte/index.md
 - name: Zurück zu WebGAEB
   href: https://www.web-gaeb.de/
 - name: DanglDocu

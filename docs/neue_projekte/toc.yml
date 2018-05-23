@@ -1,0 +1,14 @@
+- name: Übersicht
+  href: index.md
+- name: Elemente Hinzufügen
+  href: elemente_hinzufuegen.md
+- name: Gruppierungen
+  href: gruppierungen.md
+- name: Preise Hinzufügen & Kalkulieren
+  href: kalkulieren.md
+- name: Projektinformationen Hinzufügen
+  href: projektinformationen_hinzufuegen.md
+- name: Praxisbeispiel
+  href: beispiel.md
+- name: Allgemeine Hinweise
+  href: hinweise.md

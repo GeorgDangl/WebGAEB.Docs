@@ -29,7 +29,14 @@ Mit Web**GAEB** ist es möglich, Projekte von Grund auf zu Erstellen. Dies gesch
 
 Beginnen Sie damit, die Excelvorlage für neue Projekte von der Startseite von Web**GAEB** zu laden.
 
-[Hier lesen Sie mehr darüber, wie neue Projekte erstellt werden können](neue_projekte_erstellen.md).
+[Hier lesen Sie mehr darüber, wie neue Projekte erstellt werden können](neue_projekte/neue_projekte_erstellen.md). Sehen Sie sich auch das [Praxisbeispiel](neue_projekte/beispiel.md) für eine Schritt-für-Schritt Anleitung an zum Erstellen neuer Projekte.
+
+## Sprache in Excel Dateien
+
+Web**GAEB** erkennt die eingestellte Sprache Ihres Internetbrowsers und erstellt darauf basierend entweder Deutsche oder Englische Exceldateien.
+Beide Sprachen sind völlig kompatibel zueinander, es werden nur Texte wie z.B. Überschriften oder Blattnamen geändert.
+
+Möchten Sie die Sprache Wechseln? Dann ändern Sie einfach die Spracheinstellungen Ihres Browsers!
 
 ## Mehr Erfahren
 
