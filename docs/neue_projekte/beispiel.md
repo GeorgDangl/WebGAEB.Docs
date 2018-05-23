@@ -85,3 +85,5 @@ Möchten Sie nun Ihr Projekt nach GAEB exportieren, um es Ihrem Auftraggeber zu 
 ![Export nach GAEB](images/09_Export_Nach_GAEB.png)
 
 **Glückwunsch!** Sie haben soeben Ihr erstes Projekt mit Web**GAEB** erzeugt!
+
+Haben Sie Fragen? [Bitte kontaktieren Sie uns](https://www.dangl-it.de/kontakt/?message=Ich+möchte+mehr+über+WebGAEB+erfahren.+Bitte+kontaktieren+Sie+mich.)!
