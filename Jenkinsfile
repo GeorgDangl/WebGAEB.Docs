@@ -9,9 +9,11 @@ pipeline {
         DocuApiEndpoint = credentials('docu_api_upload_endpoint')
         DocuApiKey = credentials('WebGAEB.Docs.Docu_ApiKey')
     }
-    stages ('Deploy') {
-        steps {
-            powershell './build.ps1 UploadDocumentation'
+    stages {
+        stage ('Deploy') {
+            steps {
+                powershell './build.ps1 UploadDocumentation'
+            }
         }
     }
     post {
