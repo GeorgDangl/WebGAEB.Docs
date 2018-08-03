@@ -12,7 +12,8 @@ Folgende Beispieleingabe in Excel:
 | Position | 01.01.02     | Decken              |
 | Gruppe   | 02           | Aussenanlagen       |
 | Position | 02.01        | Baumarbeiten        |
-| Position | 03           | Stundenlohn Geselle |
+| Gruppe   | 03           | Stundenlohnarbeiten |
+| Position | 03.01        | Stundenlohn Geselle |
 
 Erzeugt folgende Projektstruktur:
 
@@ -22,6 +23,8 @@ Erzeugt folgende Projektstruktur:
         - 01.01.02 Decken
     - 02. Aussenanlagen
       - 02.01. Baumarbeiten
-    - 03. Stundenlohn Geselle
+    - 03. Stundenlohnarbeiten
+      - 03.01 Stundenlohn Geselle
 
-Sie erkennen an diesem Beispiel, dass `Position 03.` nicht mehr unter eine Gruppe eingeordnet wird, da keine der vorangehenden Gruppen mit der selben Ordnungszahl beginnen. Das bedeutet, Sie müssen Gruppen nicht manuell schließen. Wenn Sie die Datei erneut mit Web**GAEB** konvertieren, werden die Gruppenendfelder automatisch hinzugefügt.
+Sie erkennen an diesem Beispiel, dass `Gruppe 02.` automatisch als neue Gruppe in der obersten Ebene definiert wird, da keine der vorangehenden Gruppen mit der selben Ordnungszahl beginnen. Das bedeutet, Sie müssen Gruppen nicht manuell schließen. Wenn Sie die Datei erneut mit Web**GAEB** konvertieren, werden die Gruppenendfelder automatisch hinzugefügt.  
+Um kompatibel mit dem GAEB Standard zu sein, sollten Sie darauf achten, keine Gruppen und Positionen in der selben Gliederungsstufe eines Projektes zu vermischen.
