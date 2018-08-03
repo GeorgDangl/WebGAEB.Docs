@@ -1,18 +1,16 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using Nuke.Common;
-using Nuke.Common.Git;
+﻿using Nuke.Common;
 using Nuke.Common.Tools.GitVersion;
-using static Nuke.Common.EnvironmentInfo;
 using static Nuke.Common.IO.FileSystemTasks;
-using static Nuke.Common.IO.PathConstruction;
-using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tools.DocFx.DocFxTasks;
 using Nuke.Common.Tools.DocFx;
 using static Nuke.WebDocu.WebDocuTasks;
 using Nuke.WebDocu;
+using Nuke.Azure.KeyVault;
 
+[KeyVaultSettings(
+    VaultBaseUrlParameterName = nameof(KeyVaultBaseUrl),
+    ClientIdParameterName = nameof(KeyVaultClientId),
+    ClientSecretParameterName = nameof(KeyVaultClientSecret))]
 class Build : NukeBuild
 {
     // Console application entry point. Also defines the default target.
@@ -20,16 +18,17 @@ class Build : NukeBuild
 
     string DocFxFile => SolutionDirectory / "docs" / "docfx.json";
 
+    [Parameter] string KeyVaultBaseUrl;
+    [Parameter] string KeyVaultClientId;
+    [Parameter] string KeyVaultClientSecret;
     [GitVersion] readonly GitVersion GitVersion;
 
-    [Parameter] readonly string DocuApiKey;
-    [Parameter] readonly string DocuApiEndpoint;
+    [KeyVaultSecret] string DocuApiEndpoint;
+    [KeyVaultSecret("DanglWebGaebDocs-DocuApiKey")] string DocuApiKey;
 
     Target Clean => _ => _
-            .OnlyWhen(() => false) // Disabled for safety.
             .Executes(() =>
             {
-                //DeleteDirectories(GlobDirectories(SourceDirectory, "**/bin", "**/obj"));
                 EnsureCleanDirectory(OutputDirectory);
             });
 

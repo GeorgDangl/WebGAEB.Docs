@@ -6,8 +6,9 @@ pipeline {
         }
     }
     environment {
-        DocuApiEndpoint = credentials('docu_api_upload_endpoint')
-        DocuApiKey = credentials('WebGAEB.Docs.Docu_ApiKey')
+        KeyVaultBaseUrl = credentials('AzureCiKeyVaultBaseUrl')
+        KeyVaultClientId = credentials('AzureCiKeyVaultClientId')
+        KeyVaultClientSecret = credentials('AzureCiKeyVaultClientSecret')
     }
     stages {
         stage ('Deploy') {

@@ -3,3 +3,4 @@ build/bin/
 build/obj/
 output/
 docs/obj/
+.vs/
