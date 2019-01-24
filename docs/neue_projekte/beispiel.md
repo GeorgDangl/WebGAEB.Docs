@@ -28,7 +28,7 @@ Fügen Sie zuerst einige leere Zeilen zwischen _Leistungsbeschreibung_ und _Sume
 
 Speichern Sie nun die Datei.
 
-## Preise ausfüllen
+## Preise Ausfüllen
 
 Um die Preise für das Projekt zu kalkulieren haben Sie zwei Möglichkeiten:
 1. Sie können direkt in die Spalte _Einheitspreis_ schreiben.
