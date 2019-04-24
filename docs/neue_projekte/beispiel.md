@@ -22,11 +22,13 @@ Nach dem Öffnen der Datei sehen Sie folgendes:
 
 ## Fügen Sie Elemente Hinzu
 
-Fügen Sie zuerst einige leere Zeilen zwischen _Leistungsbeschreibung_ und _Sumem Leistungsbeschreibung_ ein. Hier werden nun die Hinweistexte, Positionen und Gruppen eingetragen. Ebenfalls werden gleich die Texte, die Mengen sowie die Mengeneinheiten eingetragen. Ihre Datei sollte nun so aussehen:
+Fügen Sie zuerst einige leere Zeilen zwischen _Leistungsbeschreibung_ und _Summe Leistungsbeschreibung_ ein. Hier werden nun die Hinweistexte, Positionen und Gruppen eingetragen. Ebenfalls werden gleich die Texte, die Mengen sowie die Mengeneinheiten eingetragen. Ihre Datei sollte nun so aussehen:
 
 ![Neue Elemente](images/03_Neue_Elemente.png)
 
 Speichern Sie nun die Datei.
+
+> Hinweis: Bitte achten Sie darauf, die entsprechenden Werte in der Spalte _Typ_ einzutragen. Weitere Infos dazu unter [Elemente Hinzufügen](./elemente_hinzufuegen.md).
 
 ## Preise Ausfüllen
 
