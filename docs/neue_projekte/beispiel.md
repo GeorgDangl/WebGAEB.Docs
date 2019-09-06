@@ -1,6 +1,6 @@
 # Praxisbeispiel - Erstellen eines neuen Projekts
 
-In diesem Abschnitt lernen Sie, wie Sie das Beispielprojekt aus dem [Artikel Was ist GAEB?](https://www.dangl-it.de/artikel/was-ist-gaeb/) mittels Excel in WebGAEB erstellen. Sie können das Beispielprojekt [direkt hier herunterladen](https://www.dangl-it.de/media/1031/gaeb-bundle-de.zip), es enthält alle GAEB Formate sowie die Excel Datei.
+In diesem Abschnitt lernen Sie, wie Sie das Beispielprojekt aus dem [Artikel Was ist GAEB?](https://www.dangl-it.de/artikel/was-ist-gaeb/) mittels Excel in WebGAEB erstellen. Sie können das Beispielprojekt [direkt hier herunterladen](https://www.dangl-it.de/media/1110/gaeb_bundle_de.zip), es enthält alle GAEB Formate sowie die Excel Datei.
 
 ## Das Beispielprojekt
 
