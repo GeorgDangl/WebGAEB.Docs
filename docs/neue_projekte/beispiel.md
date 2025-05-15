@@ -11,7 +11,7 @@ Es handelt sich um den vereinfacht dargestellten Neubeu eines Sportheims mit ein
 
 ## Herunterladen der Projektvorlage
 
-Gehen Sie auf die [Startseite von Web**GAEB**](https://www.web-gaeb.de) und laden Sie mit einem Klick auf _Excel Vorlage_ die leere Projektvorlager herunter. Alternativ können Sie [direkt hier klicken](https://www.web-gaeb.de/GaebConversion/GetSampleExcelProject).
+Gehen Sie auf die [Startseite von Web**GAEB**](https://www.web-gaeb.de) und laden Sie mit einem Klick auf _Excel Vorlage_ die leere Projektvorlage herunter. Alternativ können Sie [direkt hier klicken](https://www.web-gaeb.de/GaebConversion/GetSampleExcelProject).
 ![Projektvorlage Downloaden](images/01_Projektvorlage_Herunterladen.png)
 
 Nach dem Öffnen der Datei sehen Sie folgendes:
