@@ -4,3 +4,4 @@ build/obj/
 output/
 docs/obj/
 .vs/
+/output-markdown/

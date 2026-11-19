@@ -40,11 +40,17 @@ class Build : NukeBuild
                 EnsureCleanDirectory(OutputDirectory);
             });
 
+    Target TestMarkdownDocumentation => _ => _
+        .Executes(() => MarkdownDocumentationTests.Run(OutputDirectory / "markdown-tests"));
+
     Target BuildDocumentation => _ => _
         .DependsOn(Clean)
         .Executes(() =>
         {
             DocFXBuild(x => x.SetConfigFile(DocFxFile));
+
+            MarkdownDocumentation.Build(SolutionDirectory, OutputDirectory,
+                SolutionDirectory / "output-markdown" / "docs-markdown", requireApi: false);
         });
 
     Target UploadDocumentation => _ => _
@@ -54,11 +60,13 @@ class Build : NukeBuild
         .Executes(() =>
         {
             Logger.Info("Docs version: " + GitVersion.NuGetVersion);
-            WebDocu(s => s
-                .SetDocuBaseUrl(DocuBaseUrl)
-                .SetDocuApiKey(DocuApiKey)
-                .SetSourceDirectory(OutputDirectory)
-                .SetVersion(GitVersion.NuGetVersion)
-            );
+            MarkdownDocumentation.Publish(DocuBaseUrl, DocuApiKey, GitVersion.NuGetVersion,
+                SolutionDirectory / "output-markdown" / "docs-markdown.zip",
+                () => WebDocu(s => s
+                    .SetDocuBaseUrl(DocuBaseUrl)
+                    .SetDocuApiKey(DocuApiKey)
+                    .SetSourceDirectory(OutputDirectory)
+                    .SetVersion(GitVersion.NuGetVersion)
+                ));
         });
 }
