@@ -10,7 +10,11 @@
           "output/**/*",
           "docs/**/*",
           "GitVersion.yml",
-          "src/Dangl.Identity.UI/**/*"
+          "src/Dangl.Identity.UI/**/*",
+          "**/bin/**",
+          "**/obj/**",
+          ".fallout/**",
+          "build/**"
         ]
       }
     ],
@@ -18,6 +22,12 @@
       {
         "files": [
           "**.png"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**",
+          ".fallout/**",
+          "build/**"
         ]
       }
     ],

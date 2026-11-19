@@ -5,3 +5,5 @@ output/
 docs/obj/
 .vs/
 /output-markdown/
+
+.fallout/temp/

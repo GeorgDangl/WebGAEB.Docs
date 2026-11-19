@@ -1,26 +1,31 @@
-﻿using Nuke.Azure.KeyVault;
-using Nuke.Common;
-using Nuke.Common.ProjectModel;
-using Nuke.Common.Tools.GitVersion;
-using Nuke.DocFX;
-using Nuke.WebDocu;
-using static Nuke.Common.IO.FileSystemTasks;
-using static Nuke.Common.IO.PathConstruction;
-using static Nuke.DocFX.DocFXTasks;
-using static Nuke.WebDocu.WebDocuTasks;
+using Serilog;
+using Fallout.Common.IO;
+using Fallout.Common.Tools.AzureKeyVault;
+using Fallout.Common;
+using Fallout.Common.ProjectModel;
+using Fallout.Common.Tools.GitVersion;
+using Fallout.Common.Tools.DocFX;
+using Fallout.WebDocu;
+using static Fallout.Common.IO.PathConstruction;
+using static Fallout.Common.Tools.DocFX.DocFXTasks;
+using static Fallout.WebDocu.WebDocuTasks;
 
-class Build : NukeBuild
+partial class Build : FalloutBuild
 {
     // Console application entry point. Also defines the default target.
+    Target TestMarkdownDocumentation => _ => _
+        .Executes(() => MarkdownDocumentationTests.Run(OutputDirectory / "markdown-tests"));
+
     public static int Main() => Execute<Build>(x => x.BuildDocumentation);
 
-    [KeyVaultSettings(
+    [AzureKeyVaultConfiguration(
         BaseUrlParameterName = nameof(KeyVaultBaseUrl),
         ClientIdParameterName = nameof(KeyVaultClientId),
-        ClientSecretParameterName = nameof(KeyVaultClientSecret))]
-    readonly KeyVaultSettings KeyVaultSettings;
+        ClientSecretParameterName = nameof(KeyVaultClientSecret),
+    TenantIdParameterName = nameof(KeyVaultTenantId))]
+    readonly AzureKeyVaultConfiguration AzureKeyVaultConfiguration;
 
-    [Solution("WebGAEB.Docs.sln")] readonly Solution Solution;
+    [Solution("WebGaeb.Docs.sln")] readonly Solution Solution;
     AbsolutePath SolutionDirectory => Solution.Directory;
     AbsolutePath OutputDirectory => SolutionDirectory / "output";
 
@@ -29,28 +34,26 @@ class Build : NukeBuild
     [Parameter] readonly string KeyVaultBaseUrl;
     [Parameter] readonly string KeyVaultClientId;
     [Parameter] readonly string KeyVaultClientSecret;
-    [GitVersion] readonly GitVersion GitVersion;
+    [Parameter] readonly string KeyVaultTenantId;
+    [GitVersion(Framework = "netcoreapp3.1")] readonly GitVersion GitVersion;
 
-    [KeyVaultSecret] readonly string DocuBaseUrl;
-    [KeyVaultSecret("DanglWebGaebDocs-DocuApiKey")] readonly string DocuApiKey;
+    [AzureKeyVaultSecret] readonly string DocuBaseUrl;
+    [AzureKeyVaultSecret("DanglWebGaebDocs-DocuApiKey")] readonly string DocuApiKey;
 
     Target Clean => _ => _
             .Executes(() =>
             {
-                EnsureCleanDirectory(OutputDirectory);
+                OutputDirectory.CreateOrCleanDirectory();
+                (SolutionDirectory / "output-markdown").CreateOrCleanDirectory();
             });
-
-    Target TestMarkdownDocumentation => _ => _
-        .Executes(() => MarkdownDocumentationTests.Run(OutputDirectory / "markdown-tests"));
 
     Target BuildDocumentation => _ => _
         .DependsOn(Clean)
         .Executes(() =>
         {
-            DocFXBuild(x => x.SetConfigFile(DocFxFile));
+            RunDocFx("build", DocFxFile);
 
-            MarkdownDocumentation.Build(SolutionDirectory, OutputDirectory,
-                SolutionDirectory / "output-markdown" / "docs-markdown", requireApi: false);
+            MarkdownDocumentation.Create(DocFxFile, SolutionDirectory / "output-markdown" / "docs-markdown");
         });
 
     Target UploadDocumentation => _ => _
@@ -59,14 +62,13 @@ class Build : NukeBuild
         .Requires(() => DocuBaseUrl)
         .Executes(() =>
         {
-            Logger.Info("Docs version: " + GitVersion.NuGetVersion);
-            MarkdownDocumentation.Publish(DocuBaseUrl, DocuApiKey, GitVersion.NuGetVersion,
-                SolutionDirectory / "output-markdown" / "docs-markdown.zip",
-                () => WebDocu(s => s
+            Log.Information("Docs version: " + GitVersion.NuGetVersion);
+            WebDocu(s => s
                     .SetDocuBaseUrl(DocuBaseUrl)
                     .SetDocuApiKey(DocuApiKey)
                     .SetSourceDirectory(OutputDirectory)
+                    .SetMarkdownPackagePath(SolutionDirectory / "output-markdown" / "docs-markdown.zip")
                     .SetVersion(GitVersion.NuGetVersion)
-                ));
+                    .SetSkipForVersionConflicts(false));
         });
 }
